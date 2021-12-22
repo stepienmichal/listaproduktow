@@ -1,0 +1,32 @@
+﻿<Window x:Class="ListaProduktow.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ListaProduktow"
+        mc:Ignorable="d"
+        Title="Lista Produktow" Height="250" Width="400" Background="#FFB14C4C">
+    <Grid>
+        <ListView x:Name="lstProdukty" Background="#FFFF9393">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Symbol" DisplayMemberBinding="{Binding Symbol}"/>
+                        <GridViewColumn Header="Nazwa" DisplayMemberBinding="{Binding Nazwa}"/>
+                        <GridViewColumn Header="Liczba sztuk">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding LiczbaSztuk}" FontSize="12" Foreground="Blue" FontWeight="Black"
+                                               Background="Transparent"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                                
+                                
+                        </GridViewColumn> 
+                        <GridViewColumn Header="Magazyn" DisplayMemberBinding="{Binding Magazyn}"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
